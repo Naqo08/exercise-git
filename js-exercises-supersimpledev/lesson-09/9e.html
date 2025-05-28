@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text", placeholder="Your name" class="js-name-input" onkeydown="
+    handleEnterKeydown(event);
+    ">
+    
+  <button onclick="
+    displayName();
+  ">Submit</button>
+
+  <button onclick="
+    document.querySelector('.js-name-output')
+      .innerHTML = '';
+  ">Reset</button>
+
+  <p class="js-name-output"></p>
+
+
+  <script>
+    function handleEnterKeydown() {
+      if (event.key === 'Enter') {
+        displayName();
+      }
+    }
+
+    function displayName() {
+      const inputElement = document.querySelector('.js-name-input');
+      let input = inputElement.value;
+
+      document.querySelector('.js-name-output')
+        .innerHTML = `Your name is: ${input}`;
+    }
+
+    
+
+  </script>
+</body>
+</html>
